@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Streamlit
+.streamlit/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# API Keys & Secrets
+config/api_keys.py
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data files
+data/
+*.csv
+*.json
+
+# Temporary files
+tmp/
+temp/
