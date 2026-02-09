@@ -95,7 +95,6 @@ def render():
         - Click **"📥 Sync All Matches"** button
         - Fetches all current matches with scorecards
         
-        **Note:** API quota may be exhausted. Database already contains sample data for demonstration.
         """)
     
     with st.expander("2️⃣ Explore Analytics", expanded=False):
@@ -194,14 +193,14 @@ Cricbuzz_LiveStats/
         - Toast notifications
         """)
     
-    with col2:
-        st.warning("""
-        **⚠️ Known Limitations**
-        - API quota exhausted (free plan)
-        - Limited match data (2 matches)
-        - Live sync requires API quota
-        - Sample data for demonstration
-        """)
+    # with col2:
+    #     st.warning("""
+    #     **⚠️ Known Limitations**
+    #     - API quota exhausted (free plan)
+    #     - Limited match data (2 matches)
+    #     - Live sync requires API quota
+    #     - Sample data for demonstration
+    #     """)
 
     st.divider()
 

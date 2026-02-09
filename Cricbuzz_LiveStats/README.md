@@ -386,7 +386,7 @@ This project is for educational purposes.
 
 ## 👥 Authors
 
-- Your Name - Initial work
+- Pavithra Ravichandiran - Software Engineer
 
 ---
 
@@ -401,8 +401,8 @@ This project is for educational purposes.
 ## 📞 Support
 
 For issues and questions:
-- Create an issue on GitHub
-- Contact: your.email@example.com
+
+- Contact: pavithraravichandiran192@gmail.com
 
 ---
 
