@@ -1,0 +1,12 @@
+Metric,Prime Members,Non-Prime Members
+Total Transactions,"427,272","695,415"
+Unique Customers,"160,662","194,307"
+Total Revenue (₹),"₹33,412,658,238.11","₹43,134,909,807.36"
+Avg Transaction Value (₹),"₹78,199.97","₹62,027.58"
+Median Transaction Value (₹),"₹52,586.84","₹40,868.67"
+Std Dev Transaction Value (₹),"₹77,501.08","₹62,297.89"
+Total Units Sold,"534,423","868,970"
+Avg Units per Transaction,1.25,1.25
+Customer Penetration Rate (%),45.26%,54.74%
+Revenue per Customer (₹),"₹207,968.64","₹221,993.60"
+Avg Transactions per Customer,2.66,3.58
