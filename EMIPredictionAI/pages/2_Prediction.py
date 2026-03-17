@@ -18,6 +18,8 @@ import pandas as pd
 import numpy as np
 import pickle, json, os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 st.set_page_config(page_title="Prediction | EMIPredict AI", page_icon="🔮", layout="wide")
 st.title("🔮 Real-Time EMI Prediction")
 st.markdown("Fill in the applicant's financial profile below.")
@@ -26,19 +28,19 @@ st.markdown("---")
 # ── Load Models & Preprocessor ─────────────────────────────────────
 @st.cache_resource
 def load_models():
-    with open('models/best_classifier.pkl', 'rb') as f:
+    with open(os.path.join(BASE_DIR, 'models', 'best_classifier.pkl'), 'rb') as f:
         clf = pickle.load(f)
-    with open('models/best_regressor.pkl', 'rb') as f:
+    with open(os.path.join(BASE_DIR, 'models', 'best_regressor.pkl'), 'rb') as f:
         reg = pickle.load(f)
-    with open('models/preprocessor.pkl', 'rb') as f:
+    with open(os.path.join(BASE_DIR, 'models', 'preprocessor.pkl'), 'rb') as f:
         pre = pickle.load(f)
-    with open('models/feature_names.json') as f:
+    with open(os.path.join(BASE_DIR, 'models', 'feature_names.json')) as f:
         feature_cols = json.load(f)
-    with open('models/model_metrics.json') as f:
+    with open(os.path.join(BASE_DIR, 'models', 'model_metrics.json')) as f:
         metrics = json.load(f)
     return clf, reg, pre, feature_cols, metrics
 
-if not os.path.exists('models/best_classifier.pkl'):
+if not os.path.exists(os.path.join(BASE_DIR, 'models', 'best_classifier.pkl')):
     st.error("Models not found.  Please ensure `models/best_classifier.pkl` is present.  Run `python train.py` to train.")
     st.stop()
 

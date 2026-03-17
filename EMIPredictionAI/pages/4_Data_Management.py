@@ -15,12 +15,14 @@ import streamlit as st
 import pandas as pd
 import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 st.set_page_config(page_title="Data Management | EMIPredict AI", page_icon="🗄️", layout="wide")
 st.title("🗄️ Data Management")
 st.markdown("Full CRUD operations on the EMI dataset.")
 st.markdown("---")
 
-DATA_PATH = 'data/EMI_dataset.csv'
+DATA_PATH = os.path.join(BASE_DIR, 'data', 'EMI_dataset.csv')
 
 # ── Load / Save helpers ────────────────────────────────────────────
 @st.cache_data

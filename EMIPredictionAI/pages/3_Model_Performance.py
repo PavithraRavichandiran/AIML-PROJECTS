@@ -14,12 +14,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json, os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 st.set_page_config(page_title="Model Performance | EMIPredict AI", page_icon="📈", layout="wide")
 st.title("📈 Model Performance Dashboard")
 st.markdown("---")
 
 # ── Load Metrics ───────────────────────────────────────────────────
-metrics_path = 'models/model_metrics.json'
+metrics_path = os.path.join(BASE_DIR, 'models', 'model_metrics.json')
 if not os.path.exists(metrics_path):
     st.error("Metrics not found.  Run `python train.py` first.")
     st.stop()

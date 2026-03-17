@@ -8,6 +8,8 @@ Pages are in the /pages folder and appear in the sidebar automatically.
 import streamlit as st
 import json, os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 st.set_page_config(
     page_title="EMIPredict AI",
     page_icon="💳",
@@ -67,7 +69,7 @@ st.markdown("---")
 # ── Model Status ───────────────────────────────────────────────────
 st.markdown("### 🤖 Model Status")
 
-metrics_path = 'models/model_metrics.json'
+metrics_path = os.path.join(BASE_DIR, 'models', 'model_metrics.json')
 if os.path.exists(metrics_path):
     with open(metrics_path) as f:
         metrics = json.load(f)

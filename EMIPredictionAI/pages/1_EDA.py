@@ -16,6 +16,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 st.set_page_config(page_title="EDA | EMIPredict AI", page_icon="📊", layout="wide")
 st.title("📊 Exploratory Data Analysis")
 st.markdown("---")
@@ -23,7 +25,7 @@ st.markdown("---")
 # ── Load Data ──────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    path = 'data/EMI_dataset.csv'
+    path = os.path.join(BASE_DIR, 'data', 'EMI_dataset.csv')
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path, low_memory=False)
