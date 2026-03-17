@@ -1,0 +1,83 @@
+{
+  "classification": {
+    "Logistic Regression": {
+      "val_accuracy": 0.9222332015810276,
+      "val_precision": 0.8940977708304496,
+      "val_recall": 0.9222332015810276,
+      "val_f1": 0.9028522978301493,
+      "val_roc_auc": 0.9792186655492077,
+      "test_accuracy": 0.9227766798418973
+    },
+    "Decision Tree": {
+      "val_accuracy": 0.972364953886693,
+      "val_precision": 0.9729575301678227,
+      "val_recall": 0.972364953886693,
+      "val_f1": 0.9726386998359169,
+      "val_roc_auc": 0.9835620072372753,
+      "test_accuracy": 0.9712450592885375
+    },
+    "Random Forest": {
+      "val_accuracy": 0.9665678524374176,
+      "val_precision": 0.9633246694575858,
+      "val_recall": 0.9665678524374176,
+      "val_f1": 0.9638600757970683,
+      "val_roc_auc": 0.9971056445086065,
+      "test_accuracy": 0.9656126482213438
+    },
+    "Gradient Boosting": {
+      "val_accuracy": 0.9552865612648221,
+      "val_precision": 0.9487386093514599,
+      "val_recall": 0.9552865612648221,
+      "val_f1": 0.9500632467719832,
+      "val_roc_auc": 0.9936042851255008,
+      "test_accuracy": 0.955171277997365
+    },
+    "XGBoost": {
+      "val_accuracy": 0.9859519104084321,
+      "val_precision": 0.9857706362188755,
+      "val_recall": 0.9859519104084321,
+      "val_f1": 0.9858476956810333,
+      "val_roc_auc": 0.99929457068279,
+      "test_accuracy": 0.9854413702239789
+    }
+  },
+  "regression": {
+    "Linear Regression": {
+      "val_rmse": 3830.5265539647066,
+      "val_mae": 2656.360767082999,
+      "val_r2": 0.7574670195349416,
+      "val_mape": 158.69331501999022,
+      "test_rmse": 3818.991995691868
+    },
+    "Decision Tree Regressor": {
+      "val_rmse": 1256.5756807695764,
+      "val_mae": 429.1041655325916,
+      "val_r2": 0.9739005623568695,
+      "val_mape": 9.632288790829218,
+      "test_rmse": 1296.2090338769879
+    },
+    "Random Forest Regressor": {
+      "val_rmse": 953.2471308732097,
+      "val_mae": 220.0828229545455,
+      "val_r2": 0.9849801753402178,
+      "val_mape": 6.082056566658876,
+      "test_rmse": 972.99518003827
+    },
+    "Gradient Boosting Regressor": {
+      "val_rmse": 1567.3198227571065,
+      "val_mae": 771.6581861310997,
+      "val_r2": 0.9593959735525142,
+      "val_mape": 34.65837237210493,
+      "test_rmse": 1566.7203551207583
+    },
+    "XGBoost Regressor": {
+      "val_rmse": 695.130119654064,
+      "val_mae": 252.04961269826254,
+      "val_r2": 0.9920129562639775,
+      "val_mape": 9.290911865972772,
+      "test_rmse": 722.2081214535202
+    }
+  },
+  "best_classifier": "XGBoost",
+  "best_regressor": "XGBoost Regressor"
+}

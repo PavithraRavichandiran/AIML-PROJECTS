@@ -1,0 +1,10 @@
+Metric,Prime Members,Non-Prime Members
+Unique Customers,"160,662","194,307"
+Avg Orders per Customer,2.66,3.58
+Median Orders per Customer,2,3
+Min Orders,1,1
+Max Orders,20,27
+Avg Customer Spend (₹),"₹207,968.64","₹221,993.60"
+Median Customer Spend (₹),"₹136,735.84","₹139,115.65"
+Std Dev Customer Spend (₹),"₹220,886.14","₹250,184.54"
+Avg Order Value per Customer (₹),"₹77,018.80","₹59,428.84"

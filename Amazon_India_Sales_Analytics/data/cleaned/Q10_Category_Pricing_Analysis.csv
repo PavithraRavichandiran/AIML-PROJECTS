@@ -1,0 +1,2 @@
+category,transactions,units_sold,total_revenue,avg_final_price,avg_original_price,price_std,avg_discount,min_discount,max_discount,unique_customers,price_sensitivity,revenue_per_customer,revenue_efficiency
+Electronics,1122687,1403393,76547568045.47,68182.4658568862,83259.70918989381,412391.3027082208,17.422500723710172,0.0,70.0,354969,495.31,215645.78,54544.64

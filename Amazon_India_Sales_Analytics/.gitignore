@@ -1,0 +1,40 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs and local runtime artifacts
+logs/
+*.log
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit local config/state
+.streamlit/
+
+# Large/local data artifacts (keep repo pushable)
+AmazonIndia.db
+AmazonIndia.sqbpro
+data/raw/
+data/cleaned/amazon_india_all_years_cleaned.csv

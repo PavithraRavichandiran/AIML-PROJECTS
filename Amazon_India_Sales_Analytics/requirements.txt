@@ -1,0 +1,21 @@
+# Core analytics stack
+pandas==3.0.1
+numpy==2.4.2
+matplotlib==3.10.8
+seaborn==0.13.2
+scipy==1.17.1
+
+# Dashboard and visualization
+plotly==6.5.2
+streamlit==1.54.0
+
+# Data and storage utilities
+pyarrow>=16.0.0
+
+# Optional but recommended for broader SQL connectivity workflows
+SQLAlchemy>=2.0.0
+
+# Notebook support for local analysis workflows
+jupyter>=1.0.0
+
+# Note: Power BI is a desktop application and is not installed via pip.

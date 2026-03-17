@@ -1,0 +1,17 @@
+# Cricbuzz LiveStats - Project Dependencies
+
+# Core Framework
+streamlit>=1.31.0
+
+# Data Processing
+pandas>=2.0.0
+
+# API Integration
+requests>=2.31.0
+
+# Database (included in Python standard library)
+# sqlite3 - built-in
+
+# Optional: For enhanced database support
+# psycopg2-binary>=2.9.9  # PostgreSQL
+# mysql-connector-python>=8.2.0  # MySQL
