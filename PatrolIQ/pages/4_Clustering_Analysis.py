@@ -1,3 +1,6 @@
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
 import streamlit as st
 from data_loader import load_data
 import pandas as pd

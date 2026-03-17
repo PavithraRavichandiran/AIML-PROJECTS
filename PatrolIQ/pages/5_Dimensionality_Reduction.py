@@ -1,3 +1,6 @@
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -60,13 +63,13 @@ with tab1:
         # Feature importance
         st.subheader("Top 10 Features by PCA Importance")
         try:
-            fi = pd.read_csv("dr_plots/../pca_feature_importance.csv") if os.path.exists("pca_feature_importance.csv") else None
+            fi = pd.read_csv("dr_plots/../pca_feature_importance.csv") if os.path.exists(os.path.join(BASE_DIR, "pca_feature_importance.csv")) else None
         except:
             fi = None
 
         if fi is None:
             # Rebuild from plot image
-            st.image("dr_plots/03_pca_feature_importance.png",
+            st.image(os.path.join(BASE_DIR, "dr_plots/03_pca_feature_importance.png"),
                      caption="Feature Importance (PCA loadings)", use_container_width=True)
         else:
             fig_fi = px.bar(fi.head(10), x="importance", y=fi.columns[0],
@@ -77,7 +80,7 @@ with tab1:
 
         # Scree plot image
         st.subheader("Scree Plot & Cumulative Variance")
-        st.image("dr_plots/01_pca_scree_variance.png",
+        st.image(os.path.join(BASE_DIR, "dr_plots/01_pca_scree_variance.png"),
                  caption="PCA Scree Plot", use_container_width=True)
     else:
         st.warning("Run dimensionality_reduction.py first to generate PCA results.")
@@ -122,7 +125,7 @@ with tab3:
 
 with tab4:
     st.subheader("PCA vs t-SNE vs UMAP — Side by Side")
-    st.image("dr_plots/07_dr_comparison.png",
+    st.image(os.path.join(BASE_DIR, "dr_plots/07_dr_comparison.png"),
              caption="Comparison: PCA vs t-SNE vs UMAP (colored by geographic cluster)",
              use_container_width=True)
 

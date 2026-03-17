@@ -1,3 +1,6 @@
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..')
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -11,7 +14,7 @@ st.divider()
 @st.cache_data
 def load_results():
     try:
-        return pd.read_csv("mlflow_results_summary.csv")
+        return pd.read_csv(os.path.join(BASE_DIR, "mlflow_results_summary.csv"))
     except:
         return None
 
