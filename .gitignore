@@ -1,0 +1,28 @@
+# Large data files — too big for GitHub
+chicago_crimes_500k.csv
+chicago_crimes_clean.csv
+chicago_crimes_clustered.csv
+chicago_crimes_dr.csv
+
+# MLflow tracking folder (large binary artifacts)
+mlruns/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
