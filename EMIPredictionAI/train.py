@@ -366,12 +366,13 @@ def train_classifiers(X_train, X_val, X_test, yc_train, yc_val, yc_test):
                 'test_accuracy': round(test_acc, 4),
             })
             mlflow.sklearn.log_model(model, name.replace(' ', '_'))
+            run_id = mlflow.active_run().info.run_id
 
         elapsed = time.time() - t0
         results[name] = {
             'model': model, 'val_accuracy': acc, 'val_precision': prec,
             'val_recall': rec, 'val_f1': f1, 'val_roc_auc': roc,
-            'test_accuracy': test_acc,
+            'test_accuracy': test_acc, 'run_id': run_id,
         }
         print(f"    Accuracy={acc:.4f}  F1={f1:.4f}  ROC-AUC={roc:.4f}  ({elapsed:.1f}s)")
 
@@ -431,11 +432,13 @@ def train_regressors(X_train, X_val, X_test, yr_train, yr_val, yr_test):
                 'test_rmse': round(test_rmse, 2),
             })
             mlflow.sklearn.log_model(model, name.replace(' ', '_'))
+            run_id = mlflow.active_run().info.run_id
 
         elapsed = time.time() - t0
         results[name] = {
             'model': model, 'val_rmse': rmse, 'val_mae': mae,
             'val_r2': r2, 'val_mape': mape, 'test_rmse': test_rmse,
+            'run_id': run_id,
         }
         print(f"    RMSE=₹{rmse:.0f}  MAE=₹{mae:.0f}  R²={r2:.4f}  ({elapsed:.1f}s)")
 
@@ -491,6 +494,33 @@ def save_artifacts(best_clf, best_clf_name, clf_results,
 
 
 # ══════════════════════════════════════════════════════════════════
+# STEP 7b — MLflow MODEL REGISTRY
+# ══════════════════════════════════════════════════════════════════
+def register_best_models(best_clf_name, clf_results, best_reg_name, reg_results):
+    """
+    Registers the best classification and regression models in the
+    MLflow Model Registry for version control and production tracking.
+    """
+    print("\n" + "=" * 60)
+    print("STEP 7b — MLflow MODEL REGISTRY")
+    print("=" * 60)
+
+    clf_run_id  = clf_results[best_clf_name]['run_id']
+    clf_artifact = best_clf_name.replace(' ', '_')
+    clf_uri      = f"runs:/{clf_run_id}/{clf_artifact}"
+    clf_mv = mlflow.register_model(clf_uri, "EMIPredict_BestClassifier")
+    print(f"  ✓ Registered classifier : '{best_clf_name}'")
+    print(f"      Registry name : EMIPredict_BestClassifier  v{clf_mv.version}")
+
+    reg_run_id   = reg_results[best_reg_name]['run_id']
+    reg_artifact = best_reg_name.replace(' ', '_')
+    reg_uri      = f"runs:/{reg_run_id}/{reg_artifact}"
+    reg_mv = mlflow.register_model(reg_uri, "EMIPredict_BestRegressor")
+    print(f"  ✓ Registered regressor  : '{best_reg_name}'")
+    print(f"      Registry name : EMIPredict_BestRegressor   v{reg_mv.version}")
+
+
+# ══════════════════════════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════════════════════════
 def main():
@@ -531,6 +561,9 @@ def main():
     save_artifacts(best_clf, best_clf_name, clf_results,
                    best_reg, best_reg_name, reg_results,
                    preprocessor, feature_cols)
+
+    # Step 7b
+    register_best_models(best_clf_name, clf_results, best_reg_name, reg_results)
 
     print("\n" + "=" * 60)
     print("  TRAINING COMPLETE")

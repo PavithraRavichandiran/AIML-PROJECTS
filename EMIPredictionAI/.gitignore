@@ -1,7 +1,4 @@
-# Dataset (too large for GitHub - 75MB)
-data/
-
-# MLflow tracking runs
+# MLflow tracking runs (local only)
 mlruns/
 
 # Python cache
