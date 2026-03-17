@@ -46,7 +46,7 @@ def load_data():
 df = load_data()
 
 if df is None:
-    st.error("Dataset not found.  Run `python generate_dataset.py` first.")
+    st.error("Dataset not found.  Please ensure `data/EMI_dataset.csv` is present.")
     st.stop()
 
 # ── Overview Metrics ───────────────────────────────────────────────

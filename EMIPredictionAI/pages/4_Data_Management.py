@@ -38,7 +38,7 @@ def save_data(df: pd.DataFrame):
     st.cache_data.clear()   # force reload next time
 
 if not os.path.exists(DATA_PATH):
-    st.error("Dataset not found.  Run `python generate_dataset.py` first.")
+    st.error("Dataset not found.  Please ensure `data/EMI_dataset.csv` is present.")
     st.stop()
 
 df = load_data()

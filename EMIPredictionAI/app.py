@@ -86,9 +86,8 @@ if os.path.exists(metrics_path):
     st.success("✅ Models are trained and ready.  Head to **🔮 Prediction** to try them!")
 else:
     st.warning("""
-    ⚠️ Models not found.  Run the pipeline first:
+    ⚠️ Models not found.  Run the training pipeline first:
     ```
-    python generate_dataset.py
     python train.py
     ```
     Then refresh this page.

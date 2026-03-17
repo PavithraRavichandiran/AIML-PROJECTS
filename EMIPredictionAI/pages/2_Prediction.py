@@ -39,7 +39,7 @@ def load_models():
     return clf, reg, pre, feature_cols, metrics
 
 if not os.path.exists('models/best_classifier.pkl'):
-    st.error("Models not found.  Run `python generate_dataset.py` then `python train.py` first.")
+    st.error("Models not found.  Please ensure `models/best_classifier.pkl` is present.  Run `python train.py` to train.")
     st.stop()
 
 clf, reg, pre, feature_cols, metrics = load_models()
